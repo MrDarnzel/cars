@@ -24,4 +24,4 @@ Lets say you add a 2004 Toyota Corolla. It will update it to look like:
 
 1977:Plymouth:Roadrunner
 
-2004:Toyota:Corolla
+2004 Toyota Corolla
