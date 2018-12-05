@@ -2,34 +2,29 @@
 #cars.sh
 #DJ Levy
 
-stop = "no"
-
-while [ continue = "no" ]
+echo "Choose an option:"
+while true
 do
-echo "1. Enter your  car"
-echo "2. list of cars"
-echo "Q. Quit"
+	echo -e  "1. Add a car"
+	echo -e  "2. Check inventory"
+	echo -e  "3. Exit program"
+	read INTEGER
 
+	case "$INTEGER" in
+	   "1") echo "Year of the car?"
+		read YEAR
+		echo "Manufacturer?"
+		read MAKE
+		echo "Model?"
+		read MODEL
+		echo $YEAR $MAKE $MODEL >> My_old_cars
+		;;
+	   "2") sort My_old_cars
+		;;
 
-read INPUT
-
-case $INPUT in
-        1) echo "Enter in car year: "
-           read YEAR
-           echo "Enter in the make of the car: "
-           read MAKE
-           echo "Enter the model of the car: "
-           read MODEL
-           echo "$YEAR $MAKE $MODEL" >> My_old_cars
-           ;;
-
-        2) sort My_old_cars
-        ;;
-
-        Q) echo "Goodbye"
-           stop = "yes"
-           break
-           ;;
+	   "3") echo "Goodbye"
+		break;;
+	   *) echo "Please input a valid number";;
 esac
 
 done
